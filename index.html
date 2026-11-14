@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Note Sorting</title>
+  <meta name="description" content="Organise notes, study materials and projects in one place.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#" id="brand">Note Sorting</a>
+    <label class="search">
+      <span class="visually-hidden">Search notes</span>
+      <input id="q" type="search" placeholder="Search notes" autocomplete="off">
+    </label>
+    <label class="sort">
+      <span class="visually-hidden">Sort notes</span>
+      <select id="sort">
+        <option value="updated">Recently updated</option>
+        <option value="created">Recently created</option>
+        <option value="title">Title A to Z</option>
+      </select>
+    </label>
+    <span class="count" id="count" aria-live="polite"></span>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="Filters">
+      <section>
+        <h2>Category</h2>
+        <div class="filter-list" id="categories"></div>
+      </section>
+      <section>
+        <h2>Status</h2>
+        <div class="filter-list" id="statuses"></div>
+      </section>
+      <section>
+        <h2>Tags</h2>
+        <div class="tag-cloud" id="tags"></div>
+      </section>
+      <button class="reset" id="reset" type="button">Clear filters</button>
+    </aside>
+
+    <main class="feed" id="feed" aria-label="Notes">
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>No notes match these filters.</p>
+    </main>
+
+    <article class="reader" id="reader" aria-label="Selected note">
+      <div class="reader-inner" id="reader-body"></div>
+    </article>
+  </div>
+
+  <script src="assets/notes-data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
